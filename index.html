@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>iPad View Resolution</title>
+	<style>
+		body {
+			font-family: 'Open Sans', sans-serif;
+			background-color: #f2f2f2;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
+			margin-top: 30px;
+			font-size: 36px;
+			font-weight: bold;
+			color: #333;
+		}
+		form {
+			margin-top: 50px;
+		}
+		button {
+			margin-top: 20px;
+			background-color: #333;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			font-size: 18px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #555;
+		}
+		label {
+			display: inline-block;
+			margin-bottom: 10px;
+			font-size: 20px;
+			color: #333;
+			text-align: left;
+			font-weight: bold;
+		}
+		input {
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			font-size: 18px;
+			width: 80%;
+			max-width: 400px;
+		}
+		input:focus {
+			outline: none;
+			border-color: #555;
+		}
+		footer {
+			background-color: #f5f5f5;
+			padding: 5px;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			font-size: 16px;
+			color: #777;
+		}
+		footer a {
+			color: #FF0000;
+			text-decoration: none;
+		}
+		footer img {
+			height: 60px;
+			margin-right: 10px;
+		}
+	</style>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+	<h1>iPad View Resolution Calculator</h1>
+	<p>Enter the height of your resolution to calculate iPad View Resolution:</p>
+	<p>For example, if your resolution is 1920x1080, enter 1080 in the height field.</p>
+	<form>
+		<label for="height">Height:</label>
+		<input type="number" id="height" name="height"><br><br>
+		<button type="button" onclick="calculateResolution()">Calculate</button>
+	</form>
+	<p id="result"></p>
+
+	<script>
+		function calculateResolution() {
+			const height = document.getElementById("height").value;
+			if (height) {
+				const aspectRatio = 64 / 45;
+				const calculatedWidth = Math.round(height * aspectRatio);
+				document.getElementById("result").innerHTML = `Set your Engine Resolution to ${calculatedWidth}x${height}`;
+			} else {
+				document.getElementById("result").innerHTML = "Please enter a height or vertical resolution to calculate.";
+			}
+		}
+	</script>
+
+	<footer>
+		<p>Made by Shuja Plays</p>
+		<img src="https://yt3.googleusercontent.com/NFkGCfA0NuXUt1-LMymw36FKKI6zfW9YfwROIqq6BG9NMS_y8WFo0h1cKDIv1pRN-en058HwyQ=s176-c-k-c0x00ffffff-no-rj" alt="YouTube Logo">
+		<p><a href="https://www.youtube.com/@ShujaPlays" target="_blank">Subscribe for more</a></p>
+	</footer>
+</body>
+</html>
