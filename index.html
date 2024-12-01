@@ -86,7 +86,7 @@
 		function calculateResolution() {
 			const height = document.getElementById("height").value;
 			if (height) {
-				const aspectRatio = 64 / 45;
+				const aspectRatio = 4 / 3;
 				const calculatedWidth = Math.round(height * aspectRatio);
 				document.getElementById("result").innerHTML = `Set your Engine Resolution to ${calculatedWidth}x${height}`;
 			} else {
